@@ -27,7 +27,7 @@ export default defineConfig(
       rxjsX.configs.recommended,
       importX.flatConfigs.recommended,
       importX.flatConfigs.typescript,
-      ...tailwindcss.configs['flat/recommended'],
+      tailwindcss.configs.recommended,
     ],
     plugins: {
       '@angular-eslint': angular.tsPlugin,
@@ -51,6 +51,9 @@ export default defineConfig(
           project: 'tsconfig.base.json',
         }),
       ],
+      tailwindcss: {
+        config: 'apps/tuszpusz/src/styles.css',
+      },
     },
     rules: {
       ...angular.tsPlugin.configs.recommended.rules,

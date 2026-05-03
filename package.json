@@ -5,13 +5,17 @@
   "scripts": {},
   "private": true,
   "dependencies": {
+    "@angular/cdk": "^21.2.9",
     "@angular/common": "~21.2.0",
     "@angular/compiler": "~21.2.0",
     "@angular/core": "~21.2.0",
     "@angular/forms": "~21.2.0",
     "@angular/platform-browser": "~21.2.0",
     "@angular/router": "~21.2.0",
-    "rxjs": "~7.8.0"
+    "@ngrx/signals": "^21.1.0",
+    "date-fns": "^4.1.0",
+    "rxjs": "~7.8.0",
+    "zod": "^4.4.2"
   },
   "devDependencies": {
     "@analogjs/vite-plugin-angular": "~2.1.2",
@@ -52,7 +56,7 @@
     "eslint-plugin-import-x": "^4.16.2",
     "eslint-plugin-playwright": "^1.6.2",
     "eslint-plugin-rxjs-x": "^1.0.2",
-    "eslint-plugin-tailwindcss": "^3.18.3",
+    "eslint-plugin-tailwindcss": "4.0.0-alpha.2",
     "eslint-plugin-unicorn": "^64.0.0",
     "eslint-plugin-unused-imports": "^4.4.1",
     "jsdom": "^27.1.0",
