@@ -1,13 +1,14 @@
 import { defineConfig } from 'eslint/config';
-import typescriptEslint from 'typescript-eslint';
-import nxPlugin from '@nx/eslint-plugin';
 import angular from 'angular-eslint';
+import { importX } from 'eslint-plugin-import-x';
+import nxPlugin from '@nx/eslint-plugin';
 import rxjsX from 'eslint-plugin-rxjs-x';
 import stylistic from '@stylistic/eslint-plugin';
-import { importX } from 'eslint-plugin-import-x';
-import unusedImportsPlugin from 'eslint-plugin-unused-imports';
+import tailwindcss from 'eslint-plugin-tailwindcss';
+import typescriptEslint from 'typescript-eslint';
 import eslintPluginUnicorn from 'eslint-plugin-unicorn';
 import { createTypeScriptImportResolver } from 'eslint-import-resolver-typescript';
+import unusedImportsPlugin from 'eslint-plugin-unused-imports';
 
 export default defineConfig(
   {
@@ -26,13 +27,15 @@ export default defineConfig(
       rxjsX.configs.recommended,
       importX.flatConfigs.recommended,
       importX.flatConfigs.typescript,
+      ...tailwindcss.configs['flat/recommended'],
     ],
     plugins: {
       '@angular-eslint': angular.tsPlugin,
-      'unused-imports': unusedImportsPlugin,
       '@nx': nxPlugin,
       '@stylistic': stylistic,
       '@typescript-eslint': typescriptEslint.plugin,
+      tailwindcss,
+      'unused-imports': unusedImportsPlugin,
       unicorn: eslintPluginUnicorn,
     },
     languageOptions: {
