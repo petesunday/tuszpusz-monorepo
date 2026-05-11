@@ -92,7 +92,29 @@ export default defineConfig(
       '@angular-eslint/no-output-on-prefix': 'off',
       '@angular-eslint/ban-types': 'off',
       'unused-imports/no-unused-imports': 'warn',
-      '@nx/enforce-module-boundaries': ['error', {}],
+      '@nx/enforce-module-boundaries': [
+        'error',
+        {
+          depConstraints: [
+            {
+              sourceTag: 'scope:auth',
+              onlyDependOnLibsWithTags: ['scope:auth'],
+            },
+            {
+              sourceTag: 'type:feature',
+              onlyDependOnLibsWithTags: ['type:data-access', 'type:model'],
+            },
+            {
+              sourceTag: 'type:data-access',
+              onlyDependOnLibsWithTags: ['type:model'],
+            },
+            {
+              sourceTag: 'type:model',
+              onlyDependOnLibsWithTags: ['type:model'],
+            },
+          ],
+        },
+      ],
       'no-console': 'error',
       '@angular-eslint/prefer-on-push-component-change-detection': ['error'],
       'prefer-const': 'error',
